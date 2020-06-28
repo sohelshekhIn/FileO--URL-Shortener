@@ -106,6 +106,6 @@ def pageNotFound(error):
 
 
 if params["run"] == "dev":
-    app.run(debug=True)
+    app.run(debug=False)
 else:
     app.run(debug=False)
