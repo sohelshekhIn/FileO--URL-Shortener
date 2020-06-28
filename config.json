@@ -1,0 +1,7 @@
+{
+  "params": {
+    "run": "dev",
+    "local_uri": "mysql://root:root@localhost/fileo",
+    "prod_uri": "mysql://SFVSlhZIg0:PyQ1n5PLtQ@localhost/QNxLkqEQxF"
+  }
+}

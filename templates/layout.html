@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home: FailO -url Shortener</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+      .navLink:hover {
+        border-bottom: 2px solid #4299e1;
+      }
+    </style>
+    <header class="text-gray-700 body-font">
+      <div
+        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+      >
+        <a
+          href="/"
+          class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+            ></path>
+          </svg>
+          <span class="ml-3 text-xl">FileO</span>
+        </a>
+        <nav
+          class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center"
+        >
+          <a href="/" class="mr-5 hover:text-gray-900 navLink">Home</a>
+          <a href="/create" class="mr-5 hover:text-gray-900 navLink">Create</a>
+          <a href="/about" class="mr-5 hover:text-gray-900 navLink">About</a>
+          <a href="/contact" class="mr-5 hover:text-gray-900 navLink"
+            >Contact</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Content -->
+
+    {% block body %} {% endblock %}
+
+    <footer class="text-gray-700 body-font">
+      <div class="border-t border-gray-200">
+        <div class="container px-5 py-8 flex flex-wrap mx-auto items-center">
+          <div
+            class="flex md:flex-no-wrap flex-wrap justify-center md:justify-start"
+          >
+            <input
+              class="sm:w-64 w-40 bg-gray-100 rounded sm:mr-4 mr-2 border border-gray-400 focus:outline-none focus:border-blue-500 text-base py-2 px-4"
+              placeholder="Enter email"
+              type="text"
+            />
+            <button
+              class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded"
+            >
+              Subscribe
+            </button>
+            <p
+              class="text-gray-500 text-sm md:ml-6 md:mt-0 mt-2 sm:text-left text-center"
+            >
+              Subscribe our Newsletter
+              <br class="lg:block hidden" />for regular updates!
+            </p>
+          </div>
+          <span
+            class="inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto"
+          >
+            <a class="text-gray-500" href="https://facebook.com/sohelshekh">
+              <svg
+                fill="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              class="ml-3 text-gray-500"
+              href="https://instagram.com/sohelshekh.in"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+                ></path>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </div>
+      <div class="bg-gray-200">
+        <div
+          class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row"
+        >
+          <p class="text-gray-500 text-sm text-center sm:text-left">
+            © 2020 FileO —
+            <a
+              href="https://instagram.com/sohelshekh.in"
+              class="text-gray-600 ml-1"
+              target="_blank"
+              rel="noopener noreferrer"
+              >@sohelshekh.in</a
+            >
+          </p>
+          <span
+            class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-sm text-center text-gray-500 text-sm madeBy"
+            >Made with ❤️ in
+            <img
+              class="indianFlag"
+              src="/static/images/indiaFlag.png"
+              alt="India"
+          /></span>
+          <style>
+            .indianFlag {
+              margin-left: 5px;
+              width: 20px;
+              height: 20px;
+            }
+            .madeBy {
+              display: inline-flex;
+              text-align: center;
+            }
+          </style>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+{% extends "layout.html" %} {% block body %}
+
+<section class="text-gray-700 body-font">
+  <style>
+    section {
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-12">
+      <h1
+        class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
+      >
+        Create Short
+      </h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Create now</p>
+    </div>
+
+    <form
+      action="/create"
+      method="POST"
+      class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:px-0 linkClass"
+    >
+      <label class="text-base px-2 py-0 mr-2 mb-1 sm:mb-0" for="link"
+        >Url</label
+      >
+      <input
+        class="flex-grow w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mr-4 mb-4 sm:mb-0"
+        placeholder="URL/Link"
+        type="url"
+        name="link"
+      />
+      <label class="text-base px-2 py-0 mr-2 mb-1 sm:mb-0" for="custom"
+        >Short Link</label
+      >
+      <input
+        class="flex-grow w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mr-4 mb-4 sm:mb-0"
+        placeholder="Custome url"
+        type="text"
+        name="custom"
+        value="{{randomLink}}"
+      /><br />
+      <button
+        class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+      >
+        Create
+      </button>
+    </form>
+    <div class="member">
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, msg in messages %}
+      <div class="alert {{category}}">
+        <h4>{{msg}}</h4>
+      </div>
+      {% endfor %} {% endif %} {% endwith %}
+    </div>
+  </div>
+  <style>
+    .member {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .alert {
+      margin-top: 20px;
+      width: fit-content;
+      display: flex;
+      height: 3em;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      padding: 1em;
+    }
+    .alert h1 {
+      color: inherit;
+      font-weight: 700;
+      margin-right: 0.5em;
+    }
+
+    .success {
+      color: #fff;
+      font-weight: 650;
+      background-color: #98cfa4;
+      border: 2px solid #008f00;
+    }
+    .danger {
+      color: #fff;
+      background-color: #c07878;
+      border: 2px solid #c83a3a;
+    }
+    .info {
+      color: rgb(0, 0, 0);
+      background-color: #bbc078;
+      border: 2px solid #c8ae3a;
+    }
+
+    .linkClass {
+      padding: 1em;
+      flex-direction: column;
+    }
+    label {
+      transform: translateX(-9px);
+      margin: 2em 0em;
+      text-align: left;
+    }
+  </style>
+</section>
+{% endblock %}
