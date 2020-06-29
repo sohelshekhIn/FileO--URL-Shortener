@@ -103,6 +103,7 @@ def pageNotFound(error):
     data = Config.query.filter_by(key="creatorLink").first()
     link = data.value
     return render_template("404.html", link=link)
+    
 if __name__ == "__main__":
     pass
 
